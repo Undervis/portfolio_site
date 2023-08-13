@@ -1,0 +1,79 @@
+.menu-card,
+.menu-card-contact {
+    position: relative;
+    display: flex;
+    padding: 1em;
+    border-radius: var(--border-radius);
+    border: 1px solid white;
+    font-size: large;
+    width: auto;
+    min-width: 15rem;
+    overflow: hidden;
+    transition: ease-in-out 0.4s 0.1s;
+}
+
+.menu-card:hover,
+.menu-card-contact:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.menu-card.checked {
+    background-color: white;
+    color: black;
+}
+
+.menu-card.checked img {
+    filter: invert(1) brightness(0%);
+}
+
+.menu-card img,
+.menu-card-contact img {
+    filter: invert(1) brightness(100%);
+    transition: ease-in-out 0.4s 0.1s;
+}
+
+.menu-card:hover img,
+.menu-card-contact:hover img {
+    filter: invert(1) brightness(0%);
+}
+
+.menu-card::before,
+.menu-card-contact::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 25%;
+    width: 10rem;
+    height: 10rem;
+    transform: scale(0);
+    border-radius: 100%;
+    background-color: rgb(85, 85, 85);
+    z-index: -2;
+    transition: ease-in-out 0.2s;
+}
+
+.menu-card:hover::before,
+.menu-card-contact:hover::before {
+    transform: scale(300%);
+}
+
+.menu-card::after,
+.menu-card-contact::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 25%;
+    width: 10rem;
+    height: 10rem;
+    transform: scale(0);
+    border-radius: 100%;
+    background-color: var(--color-white);
+    z-index: -1;
+    transition: ease-in-out 0.4s;
+}
+
+.menu-card:hover::after,
+.menu-card-contact:hover::after {
+    transform: scale(300%);
+}

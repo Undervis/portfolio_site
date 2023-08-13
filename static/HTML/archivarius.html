@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Undervis - Архивариус</title>
+    <link rel="icon" href="imgs/icon.png" type="image/png">
+    <link rel="shortcut icon" href="imgs/icon.png" type="image/png">
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/tabs.css" rel="stylesheet">
+    <script src="JS/jquery.js"></script>
+    <script src="JS/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="hstack d-flex">
+            <a href="/"><img class="m-3" src="imgs/undervis_unshufle.png" height="16"></a>
+            <div class="mx-auto">
+                <div class="dropmenu ms-4">
+                    <span class="fw-bold">Данные для входа<img class="ms-1" src="imgs/person.svg" width="18px"
+                            style="filter: invert(1);"></span>
+                    <div class="dropmenu-content">
+                        <span aria-label="Имеет доступ ко всем функциям Архивариуса
+кроме удаления и редактирования пользователей" class="label-black">Редактор<img src="imgs/info.svg" width="18px"
+                                style="filter: invert(1);"></span><br>
+                        <span class="fw-bold">Логин: </span><span>editor</span>
+                        <span class="fw-bold">Пароль: </span><span>SElYPIRq</span>
+                        <hr>
+                        <span aria-label="Имеет доступ ко всем функциям Архивариуса" class="label-black">Директор<img
+                                src="imgs/info.svg" width="18px" style="filter: invert(1);"></span><br>
+                        <span class="fw-bold">Логин: </span><span>director</span>
+                        <span class="fw-bold">Пароль: </span><span>mY1QIpOC</span>
+                    </div>
+                </div>
+            </div>
+            <div class="button-outline me-4" onclick="window.open('/', '_self')"><span>Вернуться к проектам</span></div>
+        </div>
+    </header>
+    <iframe src="https://undervis.ru:8080/" class="w-100" style="height: 94vh">
+        Извините, но ваш браузер не поддерживает iFrame. Вы можете открыть приложение по этой <a
+            href="http://176.124.199.23:8080">ссылке</a>
+    </iframe>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Undervis</title>
+	<link rel="icon" href="imgs/icon.png" type="image/png">
+	<link rel="shortcut icon" href="imgs/icon.png" type="image/png">
+	<link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="CSS/style.css" rel="stylesheet">
+	<link href="CSS/tabs.css" rel="stylesheet">
+	<script src="JS/jquery.js"></script>
+	<script src="JS/main.js"></script>
+</head>
+
+<body data-bs-theme="dark">
+	<div class="screen-darker hidden"></div>
+	<div id="bg-anim"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+	<script>
+		VANTA.NET({
+			el: "#bg-anim",
+			mouseControls: true,
+			touchControls: false,
+			gyroControls: false,
+			minHeight: 200.00,
+			minWidth: 200.00,
+			scale: 1.00,
+			scaleMobile: 1.00,
+			color: 0x4f4f4f,
+			backgroundColor: 0x101010,
+			points: (window.innerWidth < 990) ? window.innerWidth / 40 : window.innerWidth / 100,
+			maxDistance: (window.innerWidth < 990) ? window.innerWidth / 25 : window.innerWidth / 100
+		})
+	</script>
+	<div class="container">
+		<header><a href="/"><img id="logo" src="imgs/undervis_unshufle.png" height="40"></a></header>
+		<div>
+			<span class="text-bg-white">Я - фуллстак веб-разработчик с более чем 2-летним опытом работы в
+				отрасли</span><br>
+			<span class="text-bg-white">Занимался проектированием, разработкой и тестированием пользовательских
+				интерфейсов, а также интеграцией баз данных</span><br>
+			<span class="text-bg-white">Обладаю знаниями в области Vue.js, jQuery, CSS и фреймворков серверной
+				стороны таких как Django и FastAPI</span>
+		</div>
+		<br>
+		<div class="text-end">
+			<span class="text-bg-white text-end">В моем портфолио вы найдете проекты от веб-сайтов до
+				мобильных приложений</span><br>
+			<span class="text-bg-white text-end">Большинство из них были созданы для малых и средних
+				предприятий</span><br>
+			<span class="text-bg-white text-end">Но также работал и с крупными заказчиками такими как
+				<a class="text-decoration-none" href="https://interaction.magnezit.ru"
+					aria-label="interaction.magnezit.ru">Группа Магнезит<img src="imgs/link_icon.svg"
+						width="18px"></a></span>
+		</div>
+		<h3 class="d-flex justify-content-center mt-5 text-uppercase">Мои проекты</h3>
+		<div class="d-flex justify-content-center py-3">
+			<ul class="nav nav-pills gap-2 fs-5">
+				<span>[</span>
+				<li class="nav-item"><span href="#" data-tab="0" class="nav-link checked" text="WEB">WEB</span></li>
+				<span>,</span>
+				<li class="nav-item"><span href="#" data-tab="1" class="nav-link" text="MOBILE">MOBILE</span></li>
+				<span>,</span>
+				<li class="nav-item"><span href="#" data-tab="2" class="nav-link" text="API">API</span></li>
+				<span>]</span>
+			</ul>
+		</div>
+		<div id="tabs">
+			<div class="mt-2 projects-tab" data-tab="0">
+				<div class="row">
+					<div class="col-lg-3 col-sm-auto mb-4 gap-2">
+						<div class="menu-card checked d-flex" data-menu="0">
+							<div class="mx-auto fw-bold fs-4 text-center">
+								<span>Музей / Архивариус</span>
+							</div>
+						</div>
+						<br>
+						<div class="menu-card" data-menu="1">
+							<div class="mx-auto fw-bold fs-4 text-center">
+								<span>IT-CUBE / Журнал</span>
+							</div>
+						</div>
+					</div>
+					<div class="vhr"></div>
+					<div class="col-lg-8 col-sm-12 projects-tab" data-tab="0">
+						<div id="archivarius-card" class="project-card" data-project="0">
+							<script>$('#archivarius-card').load('HTML/arch_info.html')</script>
+						</div>
+						<div id="journal-card" class="project-card hidden" data-project="1">
+							<script>$('#journal-card').load('HTML/journal_info.html')</script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h3 class="d-flex justify-content-center mt-5 mb-4 text-uppercase">Мои Контакты</h3>
+		<div id="contacts-card" class="row gap-2 mb-4 mx-1">
+			<script>$('#contacts-card').load('HTML/contacts.html')</script>
+		</div>
+	</div>
+	<footer class="text-muted text-center pb-4">Designed by <img src="imgs/undervis.png" height="16"></footer>
+	<script src="bootstrap/dist/js/bootstrap.js"></script>
+	<script src="JS/bg_anim.js"></script>
+</body>
+
+</html>

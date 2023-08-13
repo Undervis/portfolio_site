@@ -1,0 +1,313 @@
+@font-face {
+    font-family: 'main font';
+    /*a name to be used later*/
+    src: url('/fonts/Inner/InterTight-Light.ttf');
+    /*URL to font*/
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'main font';
+    /*a name to be used later*/
+    src: url('/fonts/Inner/InterTight-Regular.ttf');
+    /*URL to font*/
+    font-style: bold;
+    font-weight: 700;
+}
+
+:root {
+    --color-black: rgb(10, 10, 10);
+    --color-white: hsl(0, 0%, 95%);
+    --border-radius: 0.6em;
+    --base-padding: 0.2em 0.5em;
+}
+
+#bg-anim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -10;
+}
+
+body {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-family: 'main font';
+}
+
+#logo {
+    display: flex;
+    margin: 2em auto;
+}
+
+@keyframes showHr {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 25%;
+    }
+}
+
+.text-decoration-none {
+    color: var(--color-black);
+}
+
+.text-decoration-none.black {
+    color: var(--color-white);
+}
+
+.custom-hr {
+    display: block;
+    margin: 0.5em;
+    height: 2px;
+    background-color: var(--color-white);
+    border-radius: 2px;
+    animation: showHr 0.5s forwards;
+}
+
+.button-solid {
+    border: 1px solid var(--color-black);
+    display: flex;
+    border-radius: var(--border-radius);
+    background-color: var(--color-white);
+    filter: invert(0);
+    padding: var(--base-padding);
+    color: var(--color-black);
+    transition: ease-in-out 0.2s;
+}
+
+.button-solid:hover {
+    filter: invert(1);
+}
+
+.button-solid[aria-label]::after {
+    filter: invert(1);
+}
+
+.button-outline {
+    display: flex;
+    padding: var(--base-padding);
+    border-radius: 0.5em;
+}
+
+.button-outline:hover {
+    cursor: pointer;
+}
+
+.button-outline:hover span {
+    text-shadow: 0px 0px 10px var(--color-white);
+}
+
+.button-outline span {
+    transition: ease-in-out 0.2s;
+    text-shadow: 0px 0px 0px var(--color-white);
+}
+
+.vhr {
+    display: inline;
+    margin: 0.5em 2em;
+    width: 2px;
+    padding: 0;
+    background-color: var(--color-white);
+    border-radius: 2px;
+}
+
+[aria-label] {
+    display: inline-block;
+    position: relative;
+}
+
+[aria-label]::after {
+    content: attr(aria-label);
+    font-size: small;
+    color: var(--color-black);
+    padding: var(--base-padding);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    position: absolute;
+    transform: rotateX(90deg) translateX(-50%);
+    transform-origin: top center;
+    top: 120%;
+    left: 50%;
+    z-index: 1000;
+    white-space: pre;
+    transition: ease-in-out 0.1s;
+}
+
+.label-black[aria-label]::after {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    box-shadow: 0px 0px 10px var(--color-black);
+}
+
+[aria-label]:hover::after {
+    transform: rotateX(0deg) translateX(-50%);
+}
+
+@media only screen and (max-device-width : 990px) {
+
+    .vhr {
+        display: none;
+    }
+
+    #bg-anim {
+        width: 250%;
+        left: -100%;
+    }
+}
+
+.nav-link {
+    position: relative;
+    color: var(--color-white);
+    text-shadow: 0px 0px 0px var(--color-white);
+    transform: translateY(-0.46rem);
+    transition: ease-in-out 0.2s;
+}
+
+.nav-link::before {
+    content: attr(text);
+    position: absolute;
+    filter: blur(0px) brightness(0%);
+    z-index: -1;
+    transition: ease-in-out 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--color-white);
+    cursor: pointer;
+
+}
+
+.nav-link:hover::before {
+    filter: blur(4px) brightness(80%);
+}
+
+.nav-link.checked::before {
+    filter: blur(4px) brightness(80%);
+}
+
+.nav-link::after {
+    content: "";
+    display: block;
+    position: relative;
+    margin-top: 0.2em;
+    top: 80%;
+    background-color: var(--color-white);
+    transform: scaleX(0%);
+    transform-origin: 50% 50%;
+    border-radius: 5px;
+    height: 2px;
+    box-shadow: 0px 0px 10px white;
+    transition: ease-in-out 0.2s;
+}
+
+.nav-link.checked::after {
+    transform: scaleX(120%);
+}
+
+.nav-link:focus {
+    color: var(--color-white);
+}
+
+.text-bg-white {
+    position: relative;
+    border-radius: var(--border-radius);
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+    font-size: large;
+    font-weight: bold;
+    padding: var(--base-padding);
+    display: inline-block;
+    margin: 0.2em 0;
+    padding-right: 0.8rem;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.text-bg-white.text-end {
+    border-bottom-right-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    padding-left: 0.8rem;
+}
+
+.dropmenu {
+    position: relative;
+    display: inline-block;
+}
+
+.dropmenu-content {
+    display: block;
+    transform: translateX(-10%) rotateX(90deg);
+    transform-origin: top center;
+    position: absolute;
+    background-color: var(--color-black);
+    min-width: 180px;
+    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    opacity: 0;
+    z-index: 1;
+    transition: ease-in-out 0.2s;
+}
+
+.dropmenu:hover .dropmenu-content {
+    display: block;
+    transform: translateX(-10%) rotateX(0deg);
+    opacity: 1;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #363636;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #ffffff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #cacaca;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.carousel.fullscreen {
+    position: fixed;
+    top: 48%;
+    left: 48%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 1em;
+    width: 80vw;
+    z-index: 1000;
+}
+
+.screen-darker {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.screen-darker.hidden {
+    display: none;
+}
